@@ -19,7 +19,9 @@ const validateFullName = (value) => {
 const validatePassword = (value) => {
   if(!value) {
     return 'Укажите пароль';
-  };
+  } else if((!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/i.test(value)) ){
+      return 'Неверный пароль';
+  } ;
 };
 
 function App() {
